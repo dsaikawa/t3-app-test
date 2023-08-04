@@ -14,6 +14,22 @@ export const exampleRouter = createTRPCRouter({
       };
     }),
 
+  getName: publicProcedure.query(({}) => {
+    return {
+      name: "Daisuke",
+    };
+  }),
+
+  getUser: publicProcedure.query(({}) => {
+    return {
+      name: "Saikawa Daisuke",
+      mail: "dsaikawa@systemi.co.jp",
+      position: "engineer",
+      github: "github.com/dsaikawa",
+      avatar: "https://avatars.githubusercontent.com/u/80240607",
+    };
+  }),
+
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany();
   }),

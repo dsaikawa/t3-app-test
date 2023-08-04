@@ -5,6 +5,7 @@ import { api } from "~/utils/api";
 
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const name = api.example.getName.useQuery();
 
   return (
     <>
@@ -45,6 +46,9 @@ export default function Home() {
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-white">
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
+            </p>
+            <p className="text-2xl text-white">
+              I am {name.data ? name.data.name : "loading..."}.
             </p>
             <AuthShowcase />
           </div>

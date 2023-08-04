@@ -1,0 +1,4 @@
+CREATE TABLE if not EXISTS TASKS (
+    id INT NOT NULL PRIMARY KEY,
+    task TEXT NOT NULL
+);
